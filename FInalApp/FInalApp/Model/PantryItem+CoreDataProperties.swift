@@ -21,6 +21,6 @@ extension PantryItem {
     @NSManaged public var image: Data?
     @NSManaged public var desc: String?
     @NSManaged public var current: Double
-    @NSManaged public var threshhold: Double
+    @NSManaged public var threshold: Double
 
 }

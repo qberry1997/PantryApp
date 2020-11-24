@@ -14,8 +14,8 @@
 		E4B2C941256DBA0E00E09AD7 /* FInalApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4B2C93F256DBA0E00E09AD7 /* FInalApp.xcdatamodeld */; };
 		E4B2C943256DBA1800E09AD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B2C942256DBA1800E09AD7 /* Assets.xcassets */; };
 		E4B2C946256DBA1800E09AD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B2C944256DBA1800E09AD7 /* LaunchScreen.storyboard */; };
-		E4B2C958256DBD1A00E09AD7 /* PantryItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2C956256DBD1A00E09AD7 /* PantryItem+CoreDataClass.swift */; };
-		E4B2C959256DBD1A00E09AD7 /* PantryItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2C957256DBD1A00E09AD7 /* PantryItem+CoreDataProperties.swift */; };
+		E4B2C95C256DBF7300E09AD7 /* PantryItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2C95A256DBF7300E09AD7 /* PantryItem+CoreDataClass.swift */; };
+		E4B2C95D256DBF7300E09AD7 /* PantryItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2C95B256DBF7300E09AD7 /* PantryItem+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +28,8 @@
 		E4B2C942256DBA1800E09AD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4B2C945256DBA1800E09AD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4B2C947256DBA1800E09AD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E4B2C956256DBD1A00E09AD7 /* PantryItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PantryItem+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E4B2C957256DBD1A00E09AD7 /* PantryItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PantryItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E4B2C95A256DBF7300E09AD7 /* PantryItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PantryItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E4B2C95B256DBF7300E09AD7 /* PantryItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PantryItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +78,8 @@
 		E4B2C951256DBCB300E09AD7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E4B2C956256DBD1A00E09AD7 /* PantryItem+CoreDataClass.swift */,
-				E4B2C957256DBD1A00E09AD7 /* PantryItem+CoreDataProperties.swift */,
+				E4B2C95A256DBF7300E09AD7 /* PantryItem+CoreDataClass.swift */,
+				E4B2C95B256DBF7300E09AD7 /* PantryItem+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,9 +155,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4B2C959256DBD1A00E09AD7 /* PantryItem+CoreDataProperties.swift in Sources */,
+				E4B2C95D256DBF7300E09AD7 /* PantryItem+CoreDataProperties.swift in Sources */,
 				E4B2C941256DBA0E00E09AD7 /* FInalApp.xcdatamodeld in Sources */,
-				E4B2C958256DBD1A00E09AD7 /* PantryItem+CoreDataClass.swift in Sources */,
+				E4B2C95C256DBF7300E09AD7 /* PantryItem+CoreDataClass.swift in Sources */,
 				E4B2C93B256DBA0E00E09AD7 /* ViewController.swift in Sources */,
 				E4B2C937256DBA0E00E09AD7 /* AppDelegate.swift in Sources */,
 				E4B2C939256DBA0E00E09AD7 /* SceneDelegate.swift in Sources */,
