@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ItemViewController.swift
 //  FInalApp
 //
 //  Created by Quinn Berry on 11/24/20.
@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ItemViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
 
-
 }
-
