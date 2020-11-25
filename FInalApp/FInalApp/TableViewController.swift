@@ -1,5 +1,5 @@
 //
-//  ItemViewController.swift
+//  TableViewController.swift
 //  FInalApp
 //
 //  Created by Quinn Berry on 11/24/20.
@@ -8,7 +8,9 @@
 
 import UIKit
 
-class TableViewController: UIViewController {
+class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var pantryTable: UITableView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,4 +18,11 @@ class TableViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
 }
