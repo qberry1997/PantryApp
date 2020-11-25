@@ -11,18 +11,55 @@ import UIKit
 class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var pantryTable: UITableView!
     
+    let manageObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var pantry:Pantry?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        pantry = Pantry(context: manageObjectContext)
+        pantry?.fetchPantryItems()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.pantryTable.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return pantry!.getCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! PantryTableViewCell
+        cell.layer.borderWidth = 1.0
+        
+        let pantryItem = pantry?.getPantryItemAtIndex(index: indexPath.row)
+        
+        cell.itemName.text = pantryItem!.getName()
+        cell.itemDiff.text = (String)((pantryItem?.getThreshold())! - (pantryItem?.getCurrent())!)
+        
+        if let image = pantryItem?.getImage() {
+            cell.itemImage.image = UIImage(data: image)
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle.delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        // Delete the PantryItem from the data storage
+        pantry?.deletePantryItemAtIndex(index: indexPath.row)
+        // Reload data from storage
+        pantry?.fetchPantryItems()
+        // Reload table
+        self.pantryTable.reloadData()
+        
     }
 }
