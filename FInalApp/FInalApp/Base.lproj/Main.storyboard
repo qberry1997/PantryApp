@@ -58,6 +58,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="itemDiff" destination="NGA-Wp-NLB" id="vH5-a8-qOA"/>
+                                            <outlet property="itemImage" destination="ryR-P6-u9Q" id="JbU-Av-pqZ"/>
+                                            <outlet property="itemName" destination="aUx-hj-i9E" id="fel-At-vVr"/>
                                             <segue destination="7q7-P6-AHX" kind="show" id="tEK-Lt-mMl"/>
                                         </connections>
                                     </tableViewCell>

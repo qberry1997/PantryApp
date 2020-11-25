@@ -9,7 +9,10 @@
 import UIKit
 
 class PantryTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var itemImage: UIImageView!
+    @IBOutlet weak var itemName: UILabel!
+    @IBOutlet weak var itemDiff: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
