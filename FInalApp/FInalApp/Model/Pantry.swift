@@ -52,6 +52,8 @@ class Pantry {
     func addPantryItem(itemName: String){
         let newPantryItem = PantryItem(context: managedObjectContext!)
         newPantryItem.setName(name: itemName)
+        newPantryItem.setCurrent(current: 0.0)
+        newPantryItem.setThreshold(threshold: 0.0)
         
         saveContext()
     }
