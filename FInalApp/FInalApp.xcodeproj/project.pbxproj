@@ -16,6 +16,7 @@
 		E4B2C95C256DBF7300E09AD7 /* PantryItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2C95A256DBF7300E09AD7 /* PantryItem+CoreDataClass.swift */; };
 		E4B2C95D256DBF7300E09AD7 /* PantryItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2C95B256DBF7300E09AD7 /* PantryItem+CoreDataProperties.swift */; };
 		E4B2C95F256DC20F00E09AD7 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2C95E256DC20F00E09AD7 /* ItemViewController.swift */; };
+		E4B2C961256DD07000E09AD7 /* Pantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2C960256DD07000E09AD7 /* Pantry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E4B2C95A256DBF7300E09AD7 /* PantryItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PantryItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E4B2C95B256DBF7300E09AD7 /* PantryItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PantryItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E4B2C95E256DC20F00E09AD7 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		E4B2C960256DD07000E09AD7 /* Pantry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pantry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				E4B2C95A256DBF7300E09AD7 /* PantryItem+CoreDataClass.swift */,
 				E4B2C95B256DBF7300E09AD7 /* PantryItem+CoreDataProperties.swift */,
+				E4B2C960256DD07000E09AD7 /* Pantry.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 				E4B2C941256DBA0E00E09AD7 /* FInalApp.xcdatamodeld in Sources */,
 				E4B2C95C256DBF7300E09AD7 /* PantryItem+CoreDataClass.swift in Sources */,
 				E4B2C937256DBA0E00E09AD7 /* AppDelegate.swift in Sources */,
+				E4B2C961256DD07000E09AD7 /* Pantry.swift in Sources */,
 				E4B2C939256DBA0E00E09AD7 /* SceneDelegate.swift in Sources */,
 				E4B2C95F256DC20F00E09AD7 /* ItemViewController.swift in Sources */,
 			);
