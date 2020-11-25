@@ -62,4 +62,28 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.pantryTable.reloadData()
         
     }
+    @IBAction func addPantryItem(_ sender: Any) {
+        let alert = UIAlertController(title: "Add Item", message: "What is the item called?", preferredStyle: .alert)
+        
+        alert.addTextField()
+        
+        let submit = UIAlertAction(title: "OK", style: .default, handler: {(action) in
+            
+            let nameTextField = alert.textFields![0]
+            
+            self.pantry?.addPantryItem(itemName: nameTextField.text!)
+            
+            self.pantry?.fetchPantryItems()
+            
+            self.pantryTable.reloadData()
+        })
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: { (action) in
+        })
+        
+        alert.addAction(submit)
+        alert.addAction(cancel)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
 }

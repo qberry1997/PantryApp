@@ -80,7 +80,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rSa-tV-cZG"/>
+                    <navigationItem key="navigationItem" id="rSa-tV-cZG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="lM6-Ey-Ze0">
+                            <connections>
+                                <action selector="addPantryItem:" destination="BYZ-38-t0r" id="EZy-Eg-YGm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="pantryTable" destination="vbE-Hd-Qtr" id="oMO-J2-Zge"/>
                     </connections>
