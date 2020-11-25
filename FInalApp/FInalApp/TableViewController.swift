@@ -86,4 +86,16 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let selectedIndex: IndexPath = self.pantryTable.indexPath(for: sender as! UITableViewCell)!
+        
+        let pantryItem = pantry?.getPantryItemAtIndex(index: selectedIndex.row)
+        
+        if (segue.identifier == "itemView") {
+            if let viewController: ItemViewController = segue.destination as? ItemViewController {
+                viewController.selectedItem = pantryItem
+            }
+        }
+    }
 }
