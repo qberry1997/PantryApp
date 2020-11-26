@@ -22,6 +22,8 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        pantry?.saveContext()
+        pantry?.fetchPantryItems()
         self.pantryTable.reloadData()
     }
 
