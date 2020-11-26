@@ -64,5 +64,7 @@
 	<string>Allow to use the photo library.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Allow to use the camera.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow to use location for the map.</string>
 </dict>
 </plist>

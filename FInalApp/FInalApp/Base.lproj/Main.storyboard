@@ -111,6 +111,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="rSa-tV-cZG">
+                        <barButtonItem key="leftBarButtonItem" title="Map" image="map" catalog="system" id="YdM-ov-v5Z">
+                            <connections>
+                                <segue destination="fEr-rb-izE" kind="show" identifier="mapView" id="HEF-Ac-gsD"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="lM6-Ey-Ze0">
                             <connections>
                                 <action selector="addPantryItem:" destination="BYZ-38-t0r" id="EZy-Eg-YGm"/>
@@ -222,7 +227,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8g-hE-43X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1978" y="126"/>
+            <point key="canvasLocation" x="1842" y="-135"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="KOU-CZ-vXm">
+            <objects>
+                <viewController id="fEr-rb-izE" customClass="MapViewController" customModule="FInalApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="95p-2G-2wc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="444-ie-MJd">
+                                <rect key="frame" x="0.0" y="144" width="414" height="592"/>
+                            </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Request" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P2g-nf-Yu3">
+                                <rect key="frame" x="47" y="75" width="130" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YW5-FT-PW2">
+                                <rect key="frame" x="247" y="77" width="82" height="30"/>
+                                <state key="normal" title="Search Map"/>
+                                <connections>
+                                    <action selector="searchMap:" destination="fEr-rb-izE" eventType="touchUpInside" id="S7U-6I-f9D"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="444-ie-MJd" firstAttribute="top" secondItem="5hv-xa-XDU" secondAttribute="top" constant="100" id="C9y-TU-cyS"/>
+                            <constraint firstItem="444-ie-MJd" firstAttribute="leading" secondItem="5hv-xa-XDU" secondAttribute="leading" id="Kus-ZU-V0h"/>
+                            <constraint firstItem="YW5-FT-PW2" firstAttribute="top" secondItem="5hv-xa-XDU" secondAttribute="top" constant="33" id="WqL-ZC-4xE"/>
+                            <constraint firstItem="444-ie-MJd" firstAttribute="top" secondItem="P2g-nf-Yu3" secondAttribute="bottom" constant="35" id="clD-r7-0mC"/>
+                            <constraint firstItem="P2g-nf-Yu3" firstAttribute="leading" secondItem="5hv-xa-XDU" secondAttribute="leading" constant="47" id="ddo-R8-j96"/>
+                            <constraint firstItem="5hv-xa-XDU" firstAttribute="bottom" secondItem="444-ie-MJd" secondAttribute="bottom" id="f4Y-II-pAN"/>
+                            <constraint firstItem="YW5-FT-PW2" firstAttribute="leading" secondItem="P2g-nf-Yu3" secondAttribute="trailing" constant="70" id="hVO-q4-b3y"/>
+                            <constraint firstItem="5hv-xa-XDU" firstAttribute="trailing" secondItem="444-ie-MJd" secondAttribute="trailing" id="iJw-8C-hrE"/>
+                            <constraint firstItem="444-ie-MJd" firstAttribute="top" secondItem="YW5-FT-PW2" secondAttribute="bottom" constant="37" id="nrb-aN-vTD"/>
+                            <constraint firstItem="5hv-xa-XDU" firstAttribute="trailing" secondItem="YW5-FT-PW2" secondAttribute="trailing" constant="85" id="u5o-mn-SOe"/>
+                            <constraint firstItem="P2g-nf-Yu3" firstAttribute="top" secondItem="5hv-xa-XDU" secondAttribute="top" constant="31" id="xl8-gt-pUG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5hv-xa-XDU"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FvN-OT-I9C"/>
+                    <connections>
+                        <outlet property="map" destination="444-ie-MJd" id="Sqe-df-M8W"/>
+                        <outlet property="searchTxt" destination="P2g-nf-Yu3" id="WQ0-nj-8re"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bxY-st-ByZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1840.5797101449277" y="555.97826086956525"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gn2-rI-NB3">
@@ -243,4 +298,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="126.35869565217392"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map" catalog="system" width="128" height="113"/>
+    </resources>
 </document>
