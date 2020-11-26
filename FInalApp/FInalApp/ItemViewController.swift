@@ -15,11 +15,13 @@ class ItemViewController: UIViewController {
     @IBOutlet weak var currentTxt: UITextField!
     @IBOutlet weak var thresholdTxt: UITextField!
     @IBOutlet weak var priceLbl: UILabel!
+    let picker = UIImagePickerController()
     
     var selectedItem:PantryItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        picker.delegate = self
         
         loadLabels()
         // Do any additional setup after loading the view.
@@ -47,7 +49,35 @@ class ItemViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func noCameraAlert() {
+        let alert = UIAlertController(title: "No Camera Available", message: nil, preferredStyle: .alert)
+        
+        let OK = UIAlertAction(title: "OK", style: .default, handler: {(action) in
+        })
+        
+        alert.addAction(OK)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func addPhoto(_ sender: Any) {
+        if photoSegControl.selectedSegmentIndex == 0 {
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                picker.allowsEditing = false
+                picker.sourceType = UIImagePickerController.SourceType.camera
+                picker.cameraCaptureMode = .photo
+                present(picker, animated: true, completion: nil)
+            }
+            else {
+                noCameraAlert()
+            }
+        }
+        else {
+            picker.allowsEditing = false
+            picker.sourceType = .photoLibrary
+            picker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
+            picker.modalPresentationStyle = .popover
+            present(picker, animated: true, completion: nil)
+        }
     }
     
     @IBAction func saveChanges(_ sender: Any) {
@@ -60,5 +90,17 @@ class ItemViewController: UIViewController {
         selectedItem?.setThreshold(threshold: threshold!)
         
         updateAlert()
+    }
+}
+
+extension ItemViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        itemImage.image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
+        picker .dismiss(animated: true, completion: nil)
     }
 }
