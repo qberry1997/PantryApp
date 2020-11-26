@@ -37,6 +37,16 @@ class ItemViewController: UIViewController {
         }
     }
     
+    func updateAlert() {
+        let alert = UIAlertController(title: "Information Updated", message: nil, preferredStyle: .alert)
+        
+        let OK = UIAlertAction(title: "OK", style: .default, handler: {(action) in
+        })
+        
+        alert.addAction(OK)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func addPhoto(_ sender: Any) {
     }
     
@@ -48,5 +58,7 @@ class ItemViewController: UIViewController {
         }
         selectedItem?.setCurrent(current: current!)
         selectedItem?.setThreshold(threshold: threshold!)
+        
+        updateAlert()
     }
 }
