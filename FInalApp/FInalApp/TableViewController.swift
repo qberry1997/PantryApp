@@ -36,7 +36,20 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let pantryItem = pantry?.getPantryItemAtIndex(index: indexPath.row)
         
         cell.itemName.text = pantryItem!.getName()
-        cell.itemDiff.text = (String)((pantryItem?.getThreshold())! - (pantryItem?.getCurrent())!)
+        cell.itemThreshold.text = String((pantryItem?.getThreshold())!)
+        cell.itemCurrent.text = String((pantryItem?.getCurrent())!)
+        // configure color of table cell
+        let current = (pantryItem?.getCurrent())!
+        let threshold = (pantryItem?.getThreshold())!
+        if current >= threshold {
+            cell.backgroundColor = UIColor(displayP3Red: 135/255, green: 228/255, blue: 41/255, alpha: 0.5)
+        }
+        else if current > 1 {
+            cell.backgroundColor = UIColor(displayP3Red: 228/255, green: 222/255, blue: 41/255, alpha: 0.5)
+        }
+        else {
+            cell.backgroundColor = UIColor(displayP3Red: 228/255, green: 41/255, blue: 57/255, alpha: 0.5)
+        }
         
         if let image = pantryItem?.getImage() {
             cell.itemImage.image = UIImage(data: image)
