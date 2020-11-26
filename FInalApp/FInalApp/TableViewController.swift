@@ -56,6 +56,9 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         if let image = pantryItem?.getImage() {
             cell.itemImage.image = UIImage(data: image)
         }
+        else {
+            cell.itemImage.image = nil
+        }
         
         return cell
     }
