@@ -49,6 +49,39 @@ class ItemViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func getPrice(_ sender: Any) {
+        let itemName = itemNameLbl.text!
+        let urlString = "https://api.edamam.com/api/food-database/v2/parser?ingr=\(itemName))&app_id=28f2c912&app_key=0e5cb2f74a0c25e6e9b3c72c64aad418"
+        let url = URL(string: urlString)!
+        
+        let urlSession = URLSession.shared
+        let jsonQuery = urlSession.dataTask(with: url) { (data, response, error) in
+            if (error != nil) {
+                print(error!.localizedDescription)
+            }
+            
+            var err: NSError?
+            let decoder = JSONDecoder()
+            let jsonResult = try! decoder.decode(Parser.self, from: data!)
+            
+            if (err != nil){
+                print("JSON Error \(err!.localizedDescription)")
+            }
+            
+            var outputString = ""
+            let parsedObject = jsonResult.parsed?[0]
+            outputString += "Energy: " + String((parsedObject?.food?.nutrients?.ENERC_KCAL)!) + " kCals" + "\n"
+            outputString += "Protein: " + String((parsedObject?.food?.nutrients?.PROCNT)!) + " g" + "\n"
+            outputString += "Fat: " + String((parsedObject?.food?.nutrients?.FAT)!) + " g" + "\n"
+            outputString += "Carbs: " + String((parsedObject?.food?.nutrients?.CHOCDF)!) + " g"
+            print( outputString)
+            DispatchQueue.main.async(execute: {
+                self.priceLbl.text = outputString
+            })
+        }
+        jsonQuery.resume()
+    }
+    
     func noCameraAlert() {
         let alert = UIAlertController(title: "No Camera Available", message: nil, preferredStyle: .alert)
         
